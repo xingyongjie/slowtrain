@@ -317,5 +317,13 @@ function setAnchorPoint(htmlScrollTop){
     })
 }
 
+function mouseOverMenu(){
+    document.getElementById('menu').style.setProperty("animation","menuIn 0.2s linear 0s 1 normal forwards");
+}
+
+function mouseLeaveMenu(){
+    document.getElementById('menu').style.setProperty("animation","menuOut 0.2s linear 0s 1 normal forwards");
+}
+
 
 
