@@ -1,13 +1,12 @@
 * {
     margin: 0px;
     padding: 0px;
-
-
+    scroll-behavior: smooth;
 }
 
 .main {
     width: 1920px;
-    height: 5000px;
+    height: auto;
 }
 
 #tag {
@@ -282,7 +281,7 @@
 .mt-5 {
     position: relative;
     margin-left: -70px;
-
+    height: 100vh;
 }
 
 .mt-5_container {
@@ -290,7 +289,6 @@
     height: 1080px;
     margin: 0 auto;
     position: relative;
-
 }
 
 .mt-5_banner {
@@ -340,7 +338,7 @@
     opacity: 0.8;
     right: 0;
     z-index: 3;
-    opacity: 0.9;
+    text-shadow: 4px 10px black;
 }
 
 .section-text {
@@ -364,7 +362,7 @@
 
 .section-container {
     padding-bottom: 100vh;
-    top: 50vh;
+    /*top: 50vh;*/
 }
 
 .section-container:last-child {
@@ -377,10 +375,10 @@
 
 .city {
     width: auto;
-    height: 104vh;
+    height: 100vh;
     position: sticky;
     overflow: hidden;
-    top: 18px;
+    top: 0;
     left: 120vh;
     margin-top: -200px;
     padding-bottom: -200px;
@@ -403,7 +401,7 @@
     left: -10%;
     top: 15%;
     transform: translate(-8%, -50%);
-    height: 400%;
+    height: 356%;
     width: auto;
     margin: 0 auto;
 }
@@ -418,7 +416,7 @@
 .city-train {
     position: absolute;
     display: inline;
-    bottom: 13vh;
+    bottom: 25vh;
     height: 50px;
     width: auto;
     z-index: 1;
@@ -435,7 +433,7 @@
 
 .mt-5 {
     padding: auto;
-    margin-top: 200px;
+    /*margin-top: 200px;*/
 
 }
 
@@ -1315,4 +1313,80 @@ a {
     }
 }
 
+@keyframes menuIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
 
+@keyframes menuOut {
+    from {
+        transform: translateY(0%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.anchor_content {
+    position: sticky;
+    height: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.anchor_main {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    align-items: center;
+    height: 100vh;
+}
+
+.anchor_point_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 670px;
+    width: 40px;
+    z-index: 200;
+}
+
+.anchor_png {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 100;
+}
+
+.hover_menu_main {
+    position: fixed;
+    top: 0;
+    height: 80px;
+}
+
+.hover_menu_content {
+    background-color: #131313CC;
+    height: 100%;
+    width: 100vw;
+    transform: translateY(-100%);
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.hover_menu_button_area {
+    display: flex;
+    justify-content: space-between;
+    width: 12%;
+    margin-right: 130px;
+}
+
+.city_train_static_area_img {
+    position: absolute;
+    bottom: 0;
+}
