@@ -22,6 +22,7 @@ let num = {
 }
 
 let cityBlockerIndex = 4;
+let contentDiv = ['mt-2','mt-3','mt-4','mt-5','mt-6','mt-7'];
 
 scoreDisplay = document.getElementById("number");
 
@@ -263,7 +264,7 @@ document.addEventListener('scroll', (e) => {
     // console.log(`map-g3-1透明度: ${map_and_text.style.getPropertyValue('--map-g3-1')}`)
     // console.log(`map-g3-2透明度: ${map_and_text.style.getPropertyValue('--map-g3-2')}`)
 
-
+    setAnchorPoint(html.scrollTop);
 })
 
 function calculateOpacity(start, end, percent) {
@@ -273,7 +274,7 @@ function calculateOpacity(start, end, percent) {
     return (percent - start) / (end - start)
 }
 
-function mapDisplayStatus(start, end, percent){
+function mapDisplayStatus(start, end, percent) {
     if (percent - start < 0) return 'mapDisappear'
     if (percent - end > 0) return 'mapDisappear'
     return 'mapDisplay'
@@ -287,6 +288,33 @@ function caculateDisplay(start, end, cur, name) {
         // console.info('none')
         return "descOut 1s ease-out 0s 1 normal forwards"
     }
+}
+
+function anchorOnClick(index) {
+    console.debug(index);
+    window.scrollTo(0,document.getElementsByClassName(contentDiv[index])[0].offsetTop);
+}
+
+function setAnchorPoint(htmlScrollTop){
+    contentDiv.forEach((divClassName, index) =>{
+        let divOffsetTop = document.getElementsByClassName(contentDiv[index])[0].offsetTop;
+        if (index < contentDiv.length - 1){
+            let nextDivOffsetTop = document.getElementsByClassName(contentDiv[index + 1])[0].offsetTop;
+            console.log(divOffsetTop)
+            console.log(nextDivOffsetTop)
+            if(htmlScrollTop >=divOffsetTop && htmlScrollTop < nextDivOffsetTop){
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity","100%");
+            } else {
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity","0");
+            }
+        } else {
+            if(htmlScrollTop >=divOffsetTop){
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity","100%");
+            } else {
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity","0");
+            }
+        }
+    })
 }
 
 

@@ -1,13 +1,12 @@
 * {
     margin: 0px;
     padding: 0px;
-
-
+    scroll-behavior: smooth;
 }
 
 .main {
     width: 1920px;
-    height: 5000px;
+    height: auto;
 }
 
 #tag {
@@ -364,7 +363,7 @@
 
 .section-container {
     padding-bottom: 100vh;
-    top: 50vh;
+    /*top: 50vh;*/
 }
 
 .section-container:last-child {
@@ -1315,4 +1314,34 @@ a {
     }
 }
 
+.anchor_content {
+    position: sticky;
+    height: 0;
+    top: 0;
+    z-index: 100;
+}
 
+.anchor_main {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2%;
+    align-items: center;
+    height: 100vh;
+}
+
+.anchor_point_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 670px;
+    width: 40px;
+    z-index: 200;
+}
+
+.anchor_png {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 100;
+}
