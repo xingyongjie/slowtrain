@@ -21,7 +21,7 @@ let num = {
     scrollScale: 3,
 }
 
-let cityBlockerIndex = 4;
+let cityBlockerIndex = 5;
 let contentDiv = ['mt-2','mt-3','mt-4','mt-5','mt-6','mt-7'];
 
 scoreDisplay = document.getElementById("number");
@@ -158,7 +158,7 @@ function calculateCityPosition() {
     let trainImgWidth = document.getElementsByClassName("city-img-b")[0].scrollWidth;
     let mat4Height = document.getElementsByClassName("mt-4")[0].scrollHeight;
     let pos = -(html.scrollTop - 1920 * (cityBlockerIndex - 2) > mat4Height ? 0 : html.scrollTop - 1920 * (cityBlockerIndex - 2)) / mat4Height * (trainImgWidth + trainImgWidth * 0.35);
-    pos = pos < -10900 ? -10900 : pos;
+    pos = pos < -9500 ? -9500 : pos;
     pos = pos > 0 ? 0 : pos;
     return pos;
 }

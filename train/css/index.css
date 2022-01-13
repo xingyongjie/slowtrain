@@ -281,7 +281,7 @@
 .mt-5 {
     position: relative;
     margin-left: -70px;
-
+    height: 100vh;
 }
 
 .mt-5_container {
@@ -289,7 +289,6 @@
     height: 1080px;
     margin: 0 auto;
     position: relative;
-
 }
 
 .mt-5_banner {
@@ -376,10 +375,10 @@
 
 .city {
     width: auto;
-    height: 104vh;
+    height: 100vh;
     position: sticky;
     overflow: hidden;
-    top: 18px;
+    top: 0;
     left: 120vh;
     margin-top: -200px;
     padding-bottom: -200px;
@@ -402,7 +401,7 @@
     left: -10%;
     top: 15%;
     transform: translate(-8%, -50%);
-    height: 400%;
+    height: 356%;
     width: auto;
     margin: 0 auto;
 }
@@ -417,7 +416,7 @@
 .city-train {
     position: absolute;
     display: inline;
-    bottom: 13vh;
+    bottom: 25vh;
     height: 50px;
     width: auto;
     z-index: 1;
@@ -434,7 +433,7 @@
 
 .mt-5 {
     padding: auto;
-    margin-top: 200px;
+    /*margin-top: 200px;*/
 
 }
 
@@ -1385,4 +1384,9 @@ a {
     justify-content: space-between;
     width: 12%;
     margin-right: 130px;
+}
+
+.city_train_static_area_img {
+    position: absolute;
+    bottom: 0;
 }
