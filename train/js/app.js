@@ -22,7 +22,7 @@ let num = {
 }
 
 let cityBlockerIndex = 5;
-let contentDiv = ['mt-2','mt-3','mt-4','mt-5','mt-6','mt-7'];
+let contentDiv = ['mt-2', 'mt-4', 'mt-6', 'mt-7', 'mt-8'];
 
 scoreDisplay = document.getElementById("number");
 
@@ -265,6 +265,7 @@ document.addEventListener('scroll', (e) => {
     // console.log(`map-g3-2透明度: ${map_and_text.style.getPropertyValue('--map-g3-2')}`)
 
     setAnchorPoint(html.scrollTop);
+    storySwitch(html.scrollTop);
 })
 
 function calculateOpacity(start, end, percent) {
@@ -292,37 +293,85 @@ function caculateDisplay(start, end, cur, name) {
 
 function anchorOnClick(index) {
     console.debug(index);
-    window.scrollTo(0,document.getElementsByClassName(contentDiv[index])[0].offsetTop);
+    window.scrollTo(0, document.getElementsByClassName(contentDiv[index])[0].offsetTop);
 }
 
-function setAnchorPoint(htmlScrollTop){
-    contentDiv.forEach((divClassName, index) =>{
+function setAnchorPoint(htmlScrollTop) {
+    contentDiv.forEach((divClassName, index) => {
         let divOffsetTop = document.getElementsByClassName(contentDiv[index])[0].offsetTop;
-        if (index < contentDiv.length - 1){
+        if (index < contentDiv.length - 1) {
             let nextDivOffsetTop = document.getElementsByClassName(contentDiv[index + 1])[0].offsetTop;
             console.log(divOffsetTop)
             console.log(nextDivOffsetTop)
-            if(htmlScrollTop >=divOffsetTop && htmlScrollTop < nextDivOffsetTop){
-                document.getElementById('anchor_point_' + index).style.setProperty("opacity","100%");
+            if (htmlScrollTop >= divOffsetTop - 100 && htmlScrollTop < nextDivOffsetTop - 100) {
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity", "100%");
             } else {
-                document.getElementById('anchor_point_' + index).style.setProperty("opacity","0");
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity", "0");
             }
         } else {
-            if(htmlScrollTop >=divOffsetTop){
-                document.getElementById('anchor_point_' + index).style.setProperty("opacity","100%");
+            if (htmlScrollTop >= divOffsetTop -100) {
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity", "100%");
             } else {
-                document.getElementById('anchor_point_' + index).style.setProperty("opacity","0");
+                document.getElementById('anchor_point_' + index).style.setProperty("opacity", "0");
             }
         }
     })
 }
 
-function mouseOverMenu(){
-    document.getElementById('menu').style.setProperty("animation","menuIn 0.2s linear 0s 1 normal forwards");
+function mouseOverMenu() {
+    document.getElementById('menu').style.setProperty("animation", "menuIn 0.2s linear 0s 1 normal forwards");
 }
 
-function mouseLeaveMenu(){
-    document.getElementById('menu').style.setProperty("animation","menuOut 0.2s linear 0s 1 normal forwards");
+function mouseLeaveMenu() {
+    document.getElementById('menu').style.setProperty("animation", "menuOut 0.2s linear 0s 1 normal forwards");
+}
+
+function storySwitch(htmlScrollTop) {
+    let storyDivIdList = ['story1', 'story2', 'story3'];
+    // let storyContent = {
+    //     story1: ['story11', 'story12', 'story13', 'story14', 'story15'],
+    // }
+
+    let storyDivId = storyDivIdList.find((divId, index) => {
+        let divOffsetTop = document.getElementById(divId).offsetTop;
+        return htmlScrollTop >= divOffsetTop && htmlScrollTop < divOffsetTop + 5 * 1080;
+    })
+
+    if (storyDivId) {
+        let content = Array.from(document.getElementById(storyDivId + '_img').childNodes);
+        let divOffsetTop = document.getElementById(storyDivId).offsetTop;
+        content = content.filter(cnode => cnode.nodeName !== "#text");
+        let step = document.getElementById(storyDivId).clientHeight / (content.length + 1);
+        content.forEach((contentDiv, index) => {
+            switch (index) {
+                case 0:
+                    break;
+                case 1:
+                case 2:
+                    if (htmlScrollTop >= divOffsetTop + step * index) {
+                        contentDiv.style.setProperty("animation", "mapDisplay 0.5s linear 0s 1 normal forwards");
+                    } else if (htmlScrollTop < divOffsetTop + step * index) {
+                        contentDiv.style.setProperty("animation", "mapDisappear 0.5s linear 0s 1 normal forwards");
+                    }
+                    break;
+                case content.length - 1:
+                    if (htmlScrollTop >= divOffsetTop + step * index) {
+                        contentDiv.style.setProperty("animation", "mapDisplay 0.5s linear 0s 1 normal forwards");
+                    } else {
+                        contentDiv.style.setProperty("animation", "mapDisappear 0.5s linear 0s 1 normal forwards");
+                    }
+                    break;
+                default:
+                    if (htmlScrollTop >= divOffsetTop + step * index && htmlScrollTop < divOffsetTop + step * (index + 1)) {
+                        contentDiv.style.setProperty("animation", "mapDisplay 0.5s linear 0s 1 normal forwards");
+                    } else {
+                        contentDiv.style.setProperty("animation", "mapDisappear 0.5s linear 0s 1 normal forwards");
+                    }
+                    break;
+            }
+        })
+
+    }
 }
 
 
