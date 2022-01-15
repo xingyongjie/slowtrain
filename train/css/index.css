@@ -241,7 +241,7 @@
 
 .mt-4 {
     position: relative;
-    top: 200px;
+    /*top: 200px;*/
 }
 
 .mt-4_container {
@@ -681,13 +681,13 @@
 
 
 .map-base {
-    background-image: url(../images/sixth/pic_0201.png);
+    background-image: url(../images/sixth/train_banner.png);
     opacity: 0.6;
 
 }
 
 .map-g0-0 {
-    background-image: url(../images/sixth/pic_0101.png);
+    background-image: url(../images/sixth/train1.png);
     /*opacity: var(--map-g0-0);*/
     margin-left: 0px;
 
@@ -699,7 +699,7 @@
 }
 
 .map-g0-1 {
-    background-image: url(../images/sixth/pic_0102.png);
+    background-image: url(../images/sixth/train1.png);
     /*opacity: var(--map-g0-1);*/
     animation-name: var(--map-g0-1);
     animation-duration: 1s;
@@ -712,7 +712,7 @@
 }
 
 .map-g0-2 {
-    background-image: url(../images/sixth/pic_0103.png);
+    background-image: url(../images/sixth/train1.png);
     background-size: 110%, 110%;
     /*opacity: var(--map-g0-2);*/
     animation-name: var(--map-g0-2);
@@ -724,7 +724,7 @@
 }
 
 .map-g1-0 {
-    background-image: url(../images/sixth/pic_0201.png);
+    background-image: url(../images/sixth/train4.png);
     /*opacity: var(--map-g1-0);*/
     animation-name: var(--map-g1-0);
     animation-duration: 1s;
@@ -733,7 +733,7 @@
 }
 
 .map-g1-1 {
-    background-image: url(../images/sixth/pic_0202.png);
+    background-image: url(../images/sixth/train4.png);
     /*opacity: var(--map-g1-1);*/
     background-size: 110%, 110%;
 
@@ -744,7 +744,7 @@
 }
 
 .map-g1-2 {
-    background-image: url(../images/sixth/pic_0203.png);
+    background-image: url(../images/sixth/train4.png);
 
     /*opacity: var(--map-g1-2);*/
     margin-left: 2px;
@@ -757,7 +757,7 @@
 }
 
 .map-g2-0 {
-    background-image: url(../images/sixth/pic_0301.png);
+    background-image: url(../images/sixth/train7.png);
     /*opacity: var(--map-g2-0);*/
 
     animation-name: var(--map-g2-0);
@@ -767,7 +767,7 @@
 }
 
 .map-g2-1 {
-    background-image: url(../images/sixth/pic_0302.png);
+    background-image: url(../images/sixth/train7.png);
     /*opacity: var(--map-g2-1);*/
 
     animation-name: var(--map-g2-1);
@@ -779,7 +779,7 @@
 .map-g2-2 {
     /* width: 150%;
     height: 150%;   */
-    background-image: url(../images/sixth/pic_0303.png);
+    background-image: url(../images/sixth/train7.png);
     /*opacity: var(--map-g2-2);*/
     margin-left: -6px;
 
@@ -790,7 +790,7 @@
 }
 
 .map-g3-0 {
-    background-image: url(../images/sixth/pic_0401.png);
+    background-image: url(../images/sixth/train10.png);
     /*opacity: var(--map-g3-0);*/
 
     animation-name: var(--map-g3-0);
@@ -800,7 +800,7 @@
 }
 
 .map-g3-1 {
-    background-image: url(../images/sixth/pic_0402.png);
+    background-image: url(../images/sixth/train10.png);
     /*opacity: var(--map-g3-1);*/
 
     animation-name: var(--map-g3-1);
@@ -810,7 +810,7 @@
 }
 
 .map-g3-2 {
-    background-image: url(../images/sixth/pic_0403.png);
+    background-image: url(../images/sixth/train10.png);
     /*opacity: var(--map-g3-2);*/
     margin-left: 0px;
     margin-top: -2px;
@@ -1156,11 +1156,11 @@ hr.end {
 }
 
 .mt-7 {
-    position: relative;
-    margin-top: -900px;
-    margin-left: -300px;
-    transform: scale(1);
-    margin-bottom: 0px;
+    /*position: relative;*/
+    /*margin-top: -900px;*/
+    /*margin-left: -300px;*/
+    /*transform: scale(1);*/
+    /*margin-bottom: 0px;*/
 }
 
 /* .m7text{
@@ -1389,4 +1389,40 @@ a {
 .city_train_static_area_img {
     position: absolute;
     bottom: 0;
+}
+
+.story_content {
+    height: 500vh;
+}
+
+.story_content_img {
+    position: sticky;
+    top: 0;
+}
+
+.story_img_text {
+    position: absolute;
+}
+
+.story_img_text_img_1 {
+    top: 80px;
+}
+
+.story_img_text_img_2 {
+    bottom: 140px;
+    right: 150px;
+}
+
+.story_img {
+    opacity: 0;
+}
+
+.story_text {
+    font-size: 26px;
+}
+
+.story1_text_content{
+    position: absolute;
+    bottom: 320px;
+    right: 400px;
 }
