@@ -12,7 +12,7 @@
 #tag {
 
     font-family: "黑体";
-    font-size: 10pt;
+    font-size: 18px;
     /* line-height: 24px; */
 }
 
@@ -24,7 +24,7 @@
     width: 30%;
     height: 200px;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 28px;
     position: absolute;
     margin-top: 500px;
     left: 100px;
@@ -89,7 +89,21 @@
     margin: auto;
 
 }
+.explore{
+    color: white;
+    font-weight: normal;
+    animation: twinkle 2s linear infinite;
+}
+@keyframes twinkle{
+    0%{opacity: 1;}
+    25%{opacity: 0.75;}
+    50%{opacity: 0.5;}
+    75%{opacity: 0.25;}
+    100%{opacity: 1;}
+  
 
+    
+}
 @keyframes myMove {
     0% {
         bottom: 30px;
@@ -285,33 +299,27 @@
 }
 
 .mt-5_container {
-    width: 1920px;
-    height: 1080px;
     margin: 0 auto;
     position: relative;
 }
 
-.mt-5_banner {
-    display: block;
-    position: absolute;
 
-    z-index: 1;
-    left: 100px;
-}
 
 .mt-5_left {
 
     display: block;
     z-index: 2;
     position: relative;
-    float: left;
-    margin-left: 100px;
+    margin-top: -150px;
+    margin-left: 0px;
+   
     overflow: hidden;
 }
 
 .mt-5_right {
 
     position: relative;
+    margin-top: -50px;
     float: left;
     margin-left: 150px;
     z-index: 2;
@@ -331,14 +339,14 @@
     width: 100%;
     height: 30vh;
     font-size: 160px;
-    color: rgb(79, 102, 92);
+    color: #2CFF6D;
     text-align: center;
     font-style: italic;
     font-weight: bolder;
     opacity: 0.8;
     right: 0;
     z-index: 3;
-    text-shadow: 4px 10px black;
+    text-shadow: 4px 10px #456857;
 }
 
 .section-text {
@@ -388,6 +396,7 @@
 
 .city-img {
     position: absolute;
+    left:20px;
     bottom: 10vh;
     height: 100vh;
     width: auto;
@@ -491,7 +500,7 @@
 .map-and-desc {
     position: relative;
     margin: 0 auto;
-    height: 30000px;
+    height: 12500px;
     /* margin-top: 800px; */
     margin-left: 70px;
 }
@@ -699,7 +708,7 @@
 }
 
 .map-g0-1 {
-    background-image: url(../images/sixth/train1.png);
+    background-image: url(../images/sixth/train2.png);
     /*opacity: var(--map-g0-1);*/
     animation-name: var(--map-g0-1);
     animation-duration: 1s;
@@ -712,7 +721,7 @@
 }
 
 .map-g0-2 {
-    background-image: url(../images/sixth/train1.png);
+    background-image: url(../images/sixth/train3.png);
     background-size: 110%, 110%;
     /*opacity: var(--map-g0-2);*/
     animation-name: var(--map-g0-2);
@@ -733,7 +742,7 @@
 }
 
 .map-g1-1 {
-    background-image: url(../images/sixth/train4.png);
+    background-image: url(../images/sixth/train5.png);
     /*opacity: var(--map-g1-1);*/
     background-size: 110%, 110%;
 
@@ -744,12 +753,13 @@
 }
 
 .map-g1-2 {
-    background-image: url(../images/sixth/train4.png);
-
+    background-image: url(../images/sixth/train6.png);
+    transform: scale(0.9);
     /*opacity: var(--map-g1-2);*/
-    margin-left: 2px;
+    margin-left: 0px;
 
-    margin-top: 12px;
+    margin-top: 50px;
+
     animation-name: var(--map-g1-2);
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -767,7 +777,7 @@
 }
 
 .map-g2-1 {
-    background-image: url(../images/sixth/train7.png);
+    background-image: url(../images/sixth/train8.png);
     /*opacity: var(--map-g2-1);*/
 
     animation-name: var(--map-g2-1);
@@ -779,10 +789,11 @@
 .map-g2-2 {
     /* width: 150%;
     height: 150%;   */
-    background-image: url(../images/sixth/train7.png);
+    background-image: url(../images/sixth/train9.png);
     /*opacity: var(--map-g2-2);*/
-    margin-left: -6px;
-
+    margin-left: 6px;
+    transform: scale(0.9);
+    margin-top: 48px;
     animation-name: var(--map-g2-2);
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -800,7 +811,7 @@
 }
 
 .map-g3-1 {
-    background-image: url(../images/sixth/train10.png);
+    background-image: url(../images/sixth/train11.png);
     /*opacity: var(--map-g3-1);*/
 
     animation-name: var(--map-g3-1);
@@ -810,11 +821,11 @@
 }
 
 .map-g3-2 {
-    background-image: url(../images/sixth/train10.png);
+    background-image: url(../images/sixth/train12.png);
     /*opacity: var(--map-g3-2);*/
-    margin-left: 0px;
-    margin-top: -2px;
-
+    margin-left: 6px;
+    margin-top: 50px;
+    transform: scale(0.9);
     animation-name: var(--map-g3-2);
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -1330,7 +1341,24 @@ a {
         transform: translateY(-100%);
     }
 }
+.video{
+    cursor: pointer;
+    background: url("../images/common/video_up.png") no-repeat;
+   
 
+}
+.video_light{
+    display: block;
+}
+.video_down{
+    display: none;
+}
+#light:target{
+    display: none;
+}
+#down:target{
+    display: block;
+}
 .anchor_content {
     position: sticky;
     height: 0;
@@ -1350,7 +1378,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 670px;
+    height: 672px;
     width: 40px;
     z-index: 200;
 }
@@ -1367,6 +1395,7 @@ a {
     position: fixed;
     top: 0;
     height: 80px;
+    z-index: 300;
 }
 
 .hover_menu_content {
@@ -1377,6 +1406,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: end;
+    
 }
 
 .hover_menu_button_area {
@@ -1387,10 +1417,21 @@ a {
 }
 
 .city_train_static_area_img {
+    width: 1920px;
+    height: 180px;
+    overflow: hidden;
     position: absolute;
-    bottom: 0;
-}
+    margin-top: 766px;
 
+  
+
+    
+}
+.city_train_static_area_img_demo{
+    position: sticky;
+    top: 0;
+    
+}
 .story_content {
     height: 500vh;
 }
@@ -1411,18 +1452,53 @@ a {
 .story_img_text_img_2 {
     bottom: 140px;
     right: 150px;
+    
+}
+.story_content3 {
+    height: 500vh;
+}
+.story_content_img3{
+    position: relative;
+    top:0;
+}
+.story_img_text3 {
+    position: absolute;
 }
 
+.story_img_text3_img_1 {
+    top: 80px;
+    right:150px;
+}
+
+.story_img_text3_img_2 {
+    bottom: 100px;
+    left: 100px;
+}
 .story_img {
     opacity: 0;
 }
 
 .story_text {
-    font-size: 26px;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "思源黑体";
+    position: relative;
+
 }
 
 .story1_text_content{
     position: absolute;
-    bottom: 320px;
-    right: 400px;
+    bottom: 250px;
+    right: 240px;
+    text-align: inherit;
+    width: 720px;
+    height: auto;
+}
+.story1_text_content{
+    position: absolute;
+    bottom: 250px;
+    right: 240px;
+   
+    width: 720px;
+    height: auto;
 }
