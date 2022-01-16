@@ -5,7 +5,7 @@
 }
 
 .main {
-    width: 1920px;
+    width: 100vw;
     height: auto;
 }
 
@@ -100,9 +100,9 @@
     50%{opacity: 0.5;}
     75%{opacity: 0.25;}
     100%{opacity: 1;}
-  
 
-    
+
+
 }
 @keyframes myMove {
     0% {
@@ -143,24 +143,29 @@
 
 .mt-2 {
     width: 100vw;
+}
 
-
+.mt-2_left {
+    display: flex;
+    width: 50vw;
+    justify-content: center;
+    position: relative;
+    right: -4%;
 }
 
 .mt-2_container {
-    width: 1920px;
+    width: 100vw;
     height: 1080px;
     margin: 0 auto;
     position: relative;
-    /* display: flex;
-	justify-content: center;
-	align-items: center; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .mt-2_right {
-    margin: auto;
-    /* text-align: center; */
-
+    position: relative;
+    right: -1%;
 }
 
 .mt-2_head span {
@@ -197,12 +202,12 @@
     font-size: 14px;
 }
 
-.mt-2_container {
-    width: 1920px;
-    height: 1080px;
-    margin: 0 auto;
-    position: relative;
-}
+/*.mt-2_container {*/
+/*    width: 1920px;*/
+/*    height: 1080px;*/
+/*    margin: 0 auto;*/
+/*    position: relative;*/
+/*}*/
 
 /* .mt-2_left{
 
@@ -219,11 +224,18 @@
    top:300px;
 }  */
 
+.mt-3 {
+    width: 100vw;
+}
+
 .mt-3_container {
-    width: 1920px;
+    width: 100%;
     height: 1080px;
     margin: 0 auto;
     position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .mt-3_banner {
@@ -231,25 +243,22 @@
     position: absolute;
     margin: auto;
     z-index: 1;
+    width: 100vw;
 }
 
 
 .mt-3_left {
-    display: block;
     z-index: 2;
-    position: absolute;
-    left: 200px;
-    top: 150px;
-
+    margin-top: 5%;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
 }
 
 .mt-3_right {
-
-    display: block;
     z-index: 3;
-    position: absolute;
-    right: 300px;
-    top: 300px;
+    position: relative;
+    right: 2%;
 }
 
 
@@ -260,11 +269,7 @@
 
 .mt-4_container {
     position: relative;
-    padding: 0px;
-    padding-top: 100px;
     margin: 0px;
-
-
 }
 
 .mt-4_banner {
@@ -293,40 +298,34 @@
 }
 
 .mt-5 {
-    position: relative;
-    margin-left: -70px;
     height: 100vh;
+    width: 100vw;
 }
 
 .mt-5_container {
-    margin: 0 auto;
-    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 
 
 .mt-5_left {
-
-    display: block;
     z-index: 2;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    justify-content: start;
+    right: 4%;
     position: relative;
-    margin-top: -150px;
-    margin-left: 0px;
-   
-    overflow: hidden;
 }
 
 .mt-5_right {
-
-    position: relative;
-    margin-top: -50px;
-    float: left;
-    margin-left: 150px;
     z-index: 2;
-    top: 100px;
-    overflow: hidden;
-
-
+    position: relative;
+    right: 2%;
 }
 
 
@@ -388,8 +387,8 @@
     overflow: hidden;
     top: 0;
     left: 120vh;
-    margin-top: -200px;
-    padding-bottom: -200px;
+    /*margin-top: -200px;*/
+    /*padding-bottom: -200px;*/
     z-index: -1;
     background-size: cover;
 }
@@ -410,7 +409,7 @@
     left: -10%;
     top: 15%;
     transform: translate(-8%, -50%);
-    height: 356%;
+    height: 356vh;
     width: auto;
     margin: 0 auto;
 }
@@ -446,14 +445,6 @@
 
 }
 
-.mt-5_container {
-    width: 1920px;
-    height: auto;
-    margin: 0 auto;
-    position: relative;
-
-}
-
 .mt-5_banner {
     width: 60%;
     height: auto;
@@ -469,31 +460,21 @@
 
 }
 
-.mt-5_left {
-    width: 60%;
-    height: auto;
-    display: block;
-    z-index: 2;
-    position: relative;
-    float: left;
-    margin-left: 100px;
-    overflow: hidden;
+/*.mt-5_left {*/
+/*    width: 60%;*/
+/*    height: auto;*/
+/*    display: block;*/
+/*    z-index: 2;*/
+/*    position: relative;*/
+/*    float: left;*/
+/*    margin-left: 100px;*/
+/*    overflow: hidden;*/
 
-}
+/*}*/
 
 .mt-5_left span {
     position: absolute;
     z-index: 1;
-}
-
-.mt-5_right {
-    width: 30%;
-    position: relative;
-    float: left;
-    margin-left: 50px;
-    z-index: 2;
-    top: 100px;
-    overflow: hidden;
 }
 
 /** ↓↓↓↓mt6效果重构部分↓↓↓↓*/
@@ -1167,6 +1148,7 @@ hr.end {
 }
 
 .mt-7 {
+    width: 100vw;
     /*position: relative;*/
     /*margin-top: -900px;*/
     /*margin-left: -300px;*/
@@ -1344,7 +1326,7 @@ a {
 .video{
     cursor: pointer;
     background: url("../images/common/video_up.png") no-repeat;
-   
+
 
 }
 .video_light{
@@ -1381,6 +1363,7 @@ a {
     height: 672px;
     width: 40px;
     z-index: 200;
+    padding: 4px 0.5px 0px 0;
 }
 
 .anchor_png {
@@ -1406,7 +1389,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: end;
-    
+
 }
 
 .hover_menu_button_area {
@@ -1417,20 +1400,17 @@ a {
 }
 
 .city_train_static_area_img {
-    width: 1920px;
-    height: 180px;
+    width: 100vw;
+    height: 17vh;
     overflow: hidden;
     position: absolute;
-    margin-top: 766px;
-
-  
-
-    
+    bottom: 0;
 }
 .city_train_static_area_img_demo{
     position: sticky;
     top: 0;
-    
+    height: 100%;
+    width: 100vw;
 }
 .story_content {
     height: 500vh;
@@ -1446,19 +1426,21 @@ a {
 }
 
 .story_img_text_img_1 {
-    top: 80px;
+    top: 5%;
+    left: 0;
+    width: 80.6vw;
 }
 
 .story_img_text_img_2 {
-    bottom: 140px;
-    right: 150px;
-    
+    bottom: 13%;
+    right: 8%;
+    width: 45.5vw;
 }
 .story_content3 {
     height: 500vh;
 }
 .story_content_img3{
-    position: relative;
+    position: sticky;
     top:0;
 }
 .story_img_text3 {
@@ -1466,13 +1448,15 @@ a {
 }
 
 .story_img_text3_img_1 {
-    top: 80px;
-    right:150px;
+    top: 10%;
+    right: 8%;
+    width: 42vw;
 }
 
 .story_img_text3_img_2 {
-    bottom: 100px;
-    left: 100px;
+    bottom: 7%;
+    left: 4%;
+    width: 42.625vw;
 }
 .story_img {
     opacity: 0;
@@ -1488,17 +1472,20 @@ a {
 
 .story1_text_content{
     position: absolute;
-    bottom: 250px;
-    right: 240px;
-    text-align: inherit;
-    width: 720px;
+    top: 68%;
+    right: 12%;
+    width: 37.5vw;
     height: auto;
 }
-.story1_text_content{
+
+.story_back_img {
+    width: 100vw;
+}
+
+.story3_text_content {
     position: absolute;
-    bottom: 250px;
-    right: 240px;
-   
-    width: 720px;
+    top: 71%;
+    left: 8%;
+    width: 31.5vw;
     height: auto;
 }
