@@ -132,8 +132,8 @@ function numberPlay(name, direction) {
     let trainImgWidth = window.screen.width / 2;
     let mat4Height = document.getElementsByClassName("mt-4")[0].scrollHeight;
 
-    let scrollPercent = (html.scrollTop - 1920 * (cityBlockerIndex - 2) > mat4Height ? 0 :
-        html.scrollTop - 1920 * (cityBlockerIndex - 2)) / mat4Height;
+    let scrollPercent = (html.scrollTop - 1920 * (cityBlockerIndex - 2.5) > mat4Height ? 0 :
+        html.scrollTop - 1920 * (cityBlockerIndex - 2.5)) / mat4Height;
     num.score = parseInt(((scrollPercent * 2) * 81).toFixed());
     showScore();
 
@@ -153,12 +153,13 @@ function numberPlay(name, direction) {
 }
 
 function calculateCityPosition() {
-    let cityBlockerIndex = 4;
+    let cityBlockerIndex = 4.5;
     let html = document.documentElement;
     let trainImgWidth = document.getElementsByClassName("city-img-b")[0].scrollWidth;
     let mat4Height = document.getElementsByClassName("mt-4")[0].scrollHeight;
     let pos = -(html.scrollTop - 1920 * (cityBlockerIndex - 2) > mat4Height ? 0 : html.scrollTop - 1920 * (cityBlockerIndex - 2)) / mat4Height * (trainImgWidth + trainImgWidth * 0.35);
-    pos = pos < -9500 ? -9500 : pos;
+
+    pos = pos < -html.clientWidth * 4.9 ? -html.clientWidth * 4.9 : pos;
     pos = pos > 0 ? 0 : pos;
     return pos;
 }
@@ -309,7 +310,7 @@ function setAnchorPoint(htmlScrollTop) {
                 document.getElementById('anchor_point_' + index).style.setProperty("opacity", "0");
             }
         } else {
-            if (htmlScrollTop >= divOffsetTop -100) {
+            if (htmlScrollTop >= divOffsetTop - 100) {
                 document.getElementById('anchor_point_' + index).style.setProperty("opacity", "100%");
             } else {
                 document.getElementById('anchor_point_' + index).style.setProperty("opacity", "0");
@@ -334,7 +335,7 @@ function storySwitch(htmlScrollTop) {
 
     let storyDivId = storyDivIdList.find((divId, index) => {
         let divOffsetTop = document.getElementById(divId).offsetTop;
-        return htmlScrollTop >= divOffsetTop && htmlScrollTop < divOffsetTop + 5 * 1080;
+        return htmlScrollTop >= divOffsetTop && htmlScrollTop < divOffsetTop + 5 * window.screen.height;
     })
 
     if (storyDivId) {
